@@ -33,7 +33,7 @@ async def on_ready():
     ''')
     print("배너 봇이 성공적으로 실행되었습니다.")
     print(client.user.name)
-    game = discord.Game('봉순아 배너 [배너이름]')
+    game = discord.Game('=배너 [배너이름]')
     await client.change_presence(status=discord.Status.online, activity=game)
 
 
