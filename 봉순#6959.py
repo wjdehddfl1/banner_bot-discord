@@ -8,6 +8,7 @@ client = discord.Client()
 ### 배너 카테고리에 역할설정 ! ! ! ###
 token = '' #봇토큰
 category_id =  #배너채널 생성되는 카테고리 ID
+category_id2 = #웹훅 받아오는 채널을 개설할 카테고리 ID ★★★★카테고리 권한 설정필수~~ 모든 역할 제거 후 everyone만 채널 보지 못하게★★★★
 banner_role = '' #배너역할 이름
 logchannel_id =  #개설 로그채널 ID
 webhookcnl_id =  #받아온 웹훅 보내주는 채널ID
@@ -60,7 +61,7 @@ async def on_message(message):
         await client.get_channel(int(crcn.id)).send(f'<@{message.author.id}>')
 
         # 웹훅 전송하고 웹훅 받는 채널생성
-        webhookchannel = await message.guild.create_text_channel(name=message.author.name)
+        webhookchannel = await message.guild.create_text_channel(name=message.author.name, category=message.guild.get_channel(category_id2))
 
         cnl = client.get_channel(int(webhookchannel.id))
 
