@@ -157,10 +157,10 @@ async def on_message(message):
         db.close()
 
         embed = discord.Embed(description="")
-        embed.set_author(name='10초 후 채널이 삭제됩니다',
+        embed.set_author(name='1분 후 채널이 삭제됩니다',
                          icon_url='https://cdn.discordapp.com/attachments/721338948382752810/783923268780032041/aebe49a5b658b59d.gif')
         await message.channel.send(embed=embed)
-        await asyncio.sleep(10)
+        await asyncio.sleep(60)
         await message.channel.delete()
 
         """ 수정금지
