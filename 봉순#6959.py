@@ -65,7 +65,7 @@ async def on_message(message):
 
         cnl = client.get_channel(int(webhookchannel.id))
 
-        hookbed = discord.Embed(title="배너 개설 완료", description='본인 서버에서 __**무료봇소스*__ 배너 개설 후 아래 명령어로 서버주소와 웹훅주소를 전송해주세요'
+        hookbed = discord.Embed(title="배너 개설 완료", description='본인 서버에서 __**배너명**__ 배너 개설 후 아래 명령어로 서버주소와 웹훅주소를 전송해주세요'
                                 , colour=discord.Colour.blue())
         hookbed.add_field(name='웹훅', value=web.url)
         infobed = discord.Embed(title='명령어', description='**=맞배너 [서버주소] [웹훅주소]**')
