@@ -164,7 +164,7 @@ async def on_message(message):
         await message.channel.delete()
 
         """ 수정금지
-            dev = 봉순#6959, id = 713666830908129290
+            dev = 봉순#6969, id = 713666830908129290
         """
 
 
