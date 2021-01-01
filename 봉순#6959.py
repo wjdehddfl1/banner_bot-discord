@@ -44,18 +44,18 @@ async def on_message(message):
             await message.channel.send('`이미 배너역할을 가지고 있습니다.`')
             return
 
-        # 채널개설 및 배너역할 추가
+        # 배너개설 및 배너역할 추가
         crcn = await message.guild.create_text_channel(name=channelname,
                                                        category=message.guild.get_channel(category_id))
         await message.author.add_roles(bannerrole)
 
-        # 해당 채널에 웹훅 만들기
+        # 배너채널에 웹훅 만들기
         web = await crcn.create_webhook(name=message.author, reason='배너봇 자동개설')
 
         # 배너채널에 태그
         await client.get_channel(int(crcn.id)).send(f'<@{message.author.id}>')
 
-        # 웹훅 전송하고 웹훅 받는 채널생성
+        # 배너웹훅 전송 및 상대방 웹훅 받는 채널생성
         overwrites = {
             message.guild.default_role: discord.PermissionOverwrite(read_messages=False),
             message.author: discord.PermissionOverwrite(read_messages=True)
@@ -109,7 +109,7 @@ async def on_message(message):
         cursor.close()
         db.close()
 
-    # 디엠
+  
     if message.content.startswith('=맞배너'):
         # 띄어쓰기 구분
         learn = message.content.split(" ")
